@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+  color-scheme: dark;
+  --bg: #08090d;
+  --surface: #11131a;
+  --text: #f5f5f7;
+  --muted: #9699a6;
+  --accent: #a9baff;
+  --border: rgba(255,255,255,.09);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { min-width: 320px; background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; line-height: 1.7; }
+a { color: inherit; text-decoration: none; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+
+.navbar { min-height: 85px; padding: 0 8%; display: flex; align-items: center; justify-content: space-between; gap: 24px; border-bottom: 1px solid var(--border); }
+.logo { font-family: 'Space Grotesk', sans-serif; font-size: 25px; font-weight: 700; letter-spacing: -1px; white-space: nowrap; }
+.logo span, h1 span { color: var(--accent); }
+nav { display: flex; align-items: center; gap: 30px; }
+nav a, .footer-links a { font-size: 13px; color: var(--muted); transition: color .2s ease; }
+nav a:hover, .footer-links a:hover { color: var(--text); }
+
+.hero { min-height: 75vh; padding: 120px 12%; background: radial-gradient(ellipse at 75% 25%, rgba(103,130,255,.12), transparent 40%); }
+.eyebrow, .legal-label { color: var(--accent); font-size: 11px; letter-spacing: 3px; font-weight: 700; margin-bottom: 25px; }
+h1 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(48px, 8vw, 90px); line-height: 1.05; letter-spacing: -5px; margin-bottom: 25px; }
+.hero > p { color: var(--muted); max-width: 580px; font-size: 16px; }
+.actions { display: flex; flex-wrap: wrap; gap: 15px; margin-top: 35px; }
+.button { display: inline-flex; align-items: center; justify-content: center; padding: 13px 23px; border-radius: 8px; font-size: 13px; font-weight: 600; transition: background .2s ease, transform .2s ease; }
+.primary { background: #e9edff; color: #10121b; }
+.primary:hover { background: #fff; transform: translateY(-2px); }
+.secondary { border: 1px solid var(--border); color: #fff; }
+.secondary:hover { background: var(--surface); }
+.info { display: flex; flex-wrap: wrap; gap: 65px; margin-top: 100px; padding-top: 35px; border-top: 1px solid var(--border); }
+.info div { display: flex; flex-direction: column; }
+.info strong { font-family: 'Space Grotesk', sans-serif; font-size: 27px; }
+.info span { color: var(--muted); font-size: 12px; }
+.info span a { color: var(--accent); }
+
+footer { border-top: 1px solid var(--border); padding: 35px 8%; display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+footer p { color: var(--muted); font-size: 12px; }
+.footer-links { display: flex; flex-wrap: wrap; gap: 20px; }
+
+.legal-container { max-width: 850px; margin: auto; padding: 85px 25px; }
+.legal-label { margin-bottom: 0; letter-spacing: 2px; }
+.legal-container h1 { font-size: clamp(40px, 7vw, 65px); margin: 15px 0; letter-spacing: -3px; }
+.updated { color: var(--muted); font-size: 12px; margin-bottom: 40px; }
+.legal-container h2 { font-family: 'Space Grotesk', sans-serif; font-size: 21px; margin: 35px 0 12px; }
+.legal-container p, .legal-container li { color: #b5b7c1; font-size: 14px; margin-bottom: 13px; }
+.legal-container ul { padding-left: 25px; }
+.legal-container a:not(.back-link) { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+.legal-container .back-link { display: inline-block; margin-bottom: 35px; color: var(--accent); font-size: 13px; }
+
+@media (max-width: 650px) {
+  .navbar { min-height: 75px; padding: 0 5%; }
+  nav { gap: 13px; }
+  nav a { font-size: 11px; }
+  .hero { padding: 90px 7%; }
+  h1 { letter-spacing: -3px; }
+  .info { gap: 30px; margin-top: 70px; }
+  footer { padding: 30px 6%; }
+  .legal-container { padding: 60px 7%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}
